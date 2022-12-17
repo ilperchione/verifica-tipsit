@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title></title>
+</head>
+<body>
+
+   <script type="text/javascript" src="static/js/libs/p5/p5.js/p5.js"></script>
+   <script type="text/javascript">
+
+   	let w = 400
+	let h = 400
+	let x = 0
+	let y = 0
+	let i = 40
+
+	function setup() {
+
+	  createCanvas(w,h);
+	  background(0);
+	  
+	}
+
+	function draw() {
+	  let r=random()
+	  stroke(255,255,255)
+	  
+	  if(r<0.5){
+	  	line(x,y,x+i,y+i)
+	  }
+	  if(r>0.5){ 
+	  	line(x,y+i,x+i,y) 
+	  }
+	  
+	  x=x+i
+	    if(x>=400){
+	    x=0
+	    y=y+i
+	    }
+	}
+
+   </script>
+
+</body>
+</html>
