@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title></title>
+</head>
+<body>
+
+   <script type="text/javascript" src="static/js/libs/p5/p5.js/p5.js"></script>
+   <script type="text/javascript">
+
+      	let x=20
+		let y=20
+		let d=40
+		let color = ['bianco','nero']
+		let black
+		let white
+
+		function setup(){
+		  createCanvas(400, 400)
+		  background(230,230, 230)
+		}
+
+		function draw(){
+		    let colore = random(color)
+		    if(colore == "bianco"){
+		      noStroke();
+		      fill(255,255,255);
+		      square(x-d/2, y-d/2, d)
+		      noStroke();
+		      fill(0,0,0);
+		      circle(x, y, d/2)
+		    }else if(colore == "nero"){
+		      noStroke();
+		      fill(0,0,0);
+		      square(x-d/2, y-d/2, d)
+		      noStroke();
+		      fill(255,255,255);
+		      circle(x, y, d/2)
+		    }
+		  
+		  x=x+d
+		  if(x>=400){
+		    x=d/2
+		    y=y+d
+		  }
+		}
+
+   </script>
+
+</body>
+</html>

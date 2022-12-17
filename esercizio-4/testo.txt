@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title></title>
+</head>
+<body>
+
+   <script type="text/javascript" src="static/js/libs/p5/p5.js/p5.js"></script>
+   <script type="text/javascript">
+
+      let w=400
+      let h=400
+      let d=50
+      let xf=d
+      let yf=d
+
+      function drawFlower(x, y, d){
+         fill(255, 190, 0)
+         circle(x+d/2, y-d/2, d);
+         circle(x-d/2, y+d/2, d);
+         circle(x-d/2, y-d/2, d);
+         circle(x+d/2, y+d/2, d);
+         fill(255, 120, 0)
+         circle(x, y, d);
+      }
+
+      function setup(){
+         createCanvas(w, h);
+         background(0, 255, 51)
+         strokeWeight(2)
+	   frameRate(3)
+      }
+
+      function draw(){
+         drawFlower(xf, yf, d)
+         xf=xf+d*2
+         if(xf>=w){
+            xf=d
+            yf=yf+d*2
+         }
+      }
+
+   </script>
+
+</body>
+</html>
